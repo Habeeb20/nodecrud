@@ -16,18 +16,13 @@ const userSchema = new mongoose.Schema ({
         required:true,
     },
 
-    image: {
-        type: String,
-        required:true,
-    },
-
+  
 
     created: {
         type:Date, default: Date.now
     }
 
-
-
 })
 
-module.exports= mongoose.model("User", userSchema)
+const User = new mongoose.model("User", userSchema)
+module.exports= User;
