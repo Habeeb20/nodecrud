@@ -153,8 +153,17 @@ router.post("/update/:id", async (req, res)=>{
         phone: req.body.phone,
     });
         try{
+            await user.save()
+            // const user = await User.save();
+            // if (user) {
+            //     res.redirect('/')
+                
+            // } else {
+            //     console.log("error")
+                
+            // }
             res.redirect("/")
-        }catch{
+        }catch(err){
             console.log(err)
         }
         
